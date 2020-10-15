@@ -54,7 +54,4 @@ To get a local copy up and running follow these simple steps.
     uvicorn src.modules.main:app --reload --port 5003
     ```
 
-* Go to [http://localhost:5003/api/estimate](http://localhost:5003/api/estimate)
 * Run immothep.ipynb
-* Outputs
-    1.
