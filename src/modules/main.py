@@ -3,8 +3,6 @@ import pickle
 from typing import Optional
 from fastapi import FastAPI
 
-from .estimate import Estimate
-
 OUT_LOCAL_PATH = 'data/OUT/'
 app = FastAPI()
 
@@ -26,4 +24,4 @@ def estimate(metre_carre: Optional[int] = None, nb_pieces: Optional[int] = None,
     predict_apartment = loaded_model_apartment.predict(
         [[code_postal, metre_carre, nb_pieces]])
 
-    return {"estimation_house": predict_house[0], "estimation_apartment": predict_apartment[0]}
+    return {"estimation_house": f'{round(predict_house[0])}€', "estimation_apartment":  f'{round(predict_apartment[0])}€'}
